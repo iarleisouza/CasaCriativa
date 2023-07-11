@@ -29,7 +29,7 @@ const ideas = [
     },
     {
         img:"./img/curso.png",
-        title:"Cursos de Programação",
+        title:"karaoke",
         category:"Estudo",
         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, quibusdam totam? Laboriosam numquam nobis libero",
         url:""
@@ -59,19 +59,23 @@ server.get("/", function(req, res) {
 
      //  re turn res.sendFile(__dirname + "/index.html")
      const h1 = "Backend"  */
-     const lastIdeas = []
-     for (let idea of ideas) {
+     const reverseIdeas = [...ideas].reverse()
+     let lastIdeas = []
+     for (let idea of reverseIdeas) {
         if(lastIdeas.length < 2) {
             lastIdeas.push(idea)
         }
      }
+    
      return res.render("index.html", { ideas: lastIdeas })
     
     })
 
 server.get("/ideias", function(req, res) {
       // return res.sendFile(__dirname + "/ideias.html")
-     return res.render("ideias.html", { ideas })
+      const reverseIdeas = [...ideas].reverse()
+
+     return res.render("ideias.html", { ideas: reverseIdeas })
     })
 // instalar o monitoramento do node o nodemon / npm i nodemon ou npm install nodemon
 // Servidor na porta 3000
