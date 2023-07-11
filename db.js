@@ -14,7 +14,7 @@ db.serialize(function(){
     `);
 
     // Inserir dadis na tabela
-    const query = `
+  /*  const query = `
     INSERT INTO ideas(
         image,
         title,
@@ -48,7 +48,7 @@ db.serialize(function(){
    //     console.log(rows)
  //  })
 
-
+*/
 })
 
 module.exports = db
