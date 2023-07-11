@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Casa Criativa</title>
+</head>
+<body>
+
+  <!--  <h1>{{title}}</h1>-->
+    
+        <div id="container">
+
+           <section id="intro">
+                <header>
+                    <a href="/index.html"> 
+                    <img src="./img/logo.png" alt="Imagem da Logomarca">
+                    </a>
+                </header>
+
+              <main>
+                <p>
+                    Ficar em casa em períodos longos, não deve ser nada fácil.
+                  </p>
+            
+                  <p>
+                    Por isso, iremos caralogas ideias, <strong> brincadeiras, jogos, filmes, livros, cursos, dicas </strong>e tudo que for necessário para tornar esse momento mais interessante.
+                  </p>
+            
+                   <p>
+                    Comece clicando e, ver ideias para ver as ideias cadastradas e contribua adicionando a sua ideia.
+                   </p>
+
+              </main>
+
+              <section id="buttons">
+               
+                <button onclick="onOff()">+ Adicionar ideias</button>
+                <button> <a href="/ideias">Ver ideias</a> </button>
+         
+              </section>
+               
+              <footer>
+               
+               Com ❤️ <a  href="http://rocketseat.com.br" target="_blank">Rocketseat</a>
+
+               </footer>
+                
+          
+            </section>
+
+            <section id="last-ideias">
+
+                {% for idea in ideas %}
+                <div class="idea">
+                    <img src="{{idea.img}}" alt=" Imagem de {{idea.title}}">
+
+                    <div class="content">
+                        <h3>{{idea.title}}</h3>
+                        <p>{{idea.category}}</p>
+                        <div class="description">
+                            {{idea.deswcription}}
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, quibusdam totam? Laboriosam numquam nobis libero doloribus quidem! Dignissimos, saepe. Accusamus aliquam, pariatur doloribus alias numquam quam eum eaque provident sed.
+                        </div>
+                        <a href="{{idea.url}}" target="_blank">Ir para a Ideia</a>
+                    </div>
+                </div>
+              
+                   {% endfor %}
+
+            </section>
+
+    
+        </div>
+
+          <!-- Modal -->
+<div id="modal" class="hide">
+    <div class="content">
+        <h1>Nova Ideia</h1>
+
+        <form action="">
+
+            <div class="input-wrapper">
+                <label for="title">Título da ideia</label>
+                <input type="text" name="title">
+
+            </div>
+
+            <div class="input-wrapper">
+                <label for="category">Categoria</label>
+                <input type="text" name="category">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="image">Link da imagem</label>
+                <input type="url" name="image">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="title">Digite uma descrição para essa ideia</label>
+                <textarea name="description" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="link">Link da ideia</label>
+                <input type="url" name="link">
+             </div>
+
+             <button>Voltar</button>
+             <button>Salvar</button>
+
+        </form>
+    </div>
+</div>
+
+       <script src="./index.js"></script>
+
+</body>
+</html>

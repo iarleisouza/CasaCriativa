@@ -1,0 +1,15 @@
+{
+  "name": "ws",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "cjs": "^0.0.11",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "nunjucks": "^3.2.4",
+    "require": "^0.4.4"
+  }
+}
